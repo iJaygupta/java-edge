@@ -1,0 +1,194 @@
+// main: style.scss
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  padding: 30px 0;
+  height: 92px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+
+  &.header-scrolled  {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    height: 72px;
+    transition: all 0.5s;
+  }
+
+  #logo {
+    float: left;
+    @media (min-width: 1024px) {
+      padding-left: 60px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-family: $accent-font;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    h1 a, h1 a:hover {
+      color: #fff;
+      padding-left: 10px;
+      border-left: 4px solid $accent-color;
+    }
+
+    img {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #logo {
+      h1 {
+        font-size: 28px;
+      }
+
+      img {
+        max-height: 40px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Intro Section
+--------------------------------------------------------------*/
+#intro {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+
+  .carousel-item {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .carousel-item::before {
+    content: '';
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right:0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .carousel-content {
+    text-align: center;
+  }
+
+  h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    width: 80%;
+    @media (min-width: 1024px) {
+      width: 60%;
+    }
+    margin: 0 auto 30px auto;
+    color: #fff;
+  }
+
+  .carousel-fade {
+    .carousel-inner {
+      .carousel-item {
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+      }
+
+      .carousel-item,
+      .active.carousel-item-left,
+      .active.carousel-item-right {
+        opacity: 0;
+      }
+
+      .active,
+      .carousel-item-next.carousel-item-left,
+      .carousel-item-prev.carousel-item-right {
+        opacity: 1;
+        transition: 0.5s;
+      }
+
+      .carousel-item-next,
+      .carousel-item-prev,
+      .active.carousel-item-left,
+      .active.carousel-item-right {
+        left: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+    @media (min-width: 1024px) {
+      width: 5%;
+    }
+  }
+
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    background: none;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .carousel-indicators li {
+    cursor: pointer;
+  }
+
+  .btn-get-started {
+    font-family: $heading-font;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #fff;
+    background: $accent-color;
+    &:hover {
+      background: #fff;;
+      color: $accent-color;
+    }
+  }
+}

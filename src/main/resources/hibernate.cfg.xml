@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+ 
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!--Server-->
+        <property name="hibernate.connection.username">multiechannel</property>
+        <property name="hibernate.connection.password">multiechannel</property>
+        <property name="hibernate.connection.url">jdbc:mysql://multiechannel.cfndz5ahuwkj.ap-south-1.rds.amazonaws.com:3306/multiechannel?useSSL=false&amp;autoReconnec=true</property>
+        <!--localhost-->
+<!--        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/multiechennal?useSSL=false&amp;autoReconnec=true</property>-->
+        
+        <property name="hibernate.jdbc.batch_size">50</property>
+        <property name="hibernate.order_inserts">true</property>
+        <property name="hibernate.batch_versioned_data">true</property>
+        <property name="hibernate.order_updates">true</property>
+        
+        <property name="show_sql">true</property> 
+        <property name="format_sql">false</property>
+        
+        <mapping class="co.admis.model.AccountIpWhiteList"/>
+        <mapping class="co.admis.model.Admin"/>
+        <mapping class="co.admis.model.AdminOTP"/>
+        <mapping class="co.admis.model.AdminPermission"/> 
+        <mapping class="co.admis.model.BillFormat"/> 
+        <mapping class="co.admis.model.BrandGroup"/> 
+        <mapping class="co.admis.model.CcavenueTransactionRecord"/> 
+        <mapping class="co.admis.model.ColorSelection"/> 
+        <mapping class="co.admis.model.Customer"/> 
+        <mapping class="co.admis.model.DeviceConfigure"/> 
+        <mapping class="co.admis.model.Facility"/> 
+        <mapping class="co.admis.model.GlobalOffer"/> 
+        <mapping class="co.admis.model.Invoice"/> 
+        <mapping class="co.admis.model.IpList"/> 
+        <mapping class="co.admis.model.Log"/>
+        <mapping class="co.admis.model.Manufacturer"/>
+        <mapping class="co.admis.model.Master"/>
+        <mapping class="co.admis.model.MessageBody"/>
+        <mapping class="co.admis.model.Organization"/>
+        <mapping class="co.admis.model.OrganizationRole"/>
+        <mapping class="co.admis.model.ProductStockRecord"/>
+        <mapping class="co.admis.model.ProductStock"/>
+        <mapping class="co.admis.model.PurchaseRecord"/>
+        <mapping class="co.admis.model.Register"/>
+        <mapping class="co.admis.model.RfidTag"/>
+        <mapping class="co.admis.model.RfidTagBackup"/>
+        <mapping class="co.admis.model.SellRecord"/>
+        <mapping class="co.admis.model.SizeChart"/>
+        <mapping class="co.admis.model.TaxSlab"/>
+        <mapping class="co.admis.model.TaxType"/>
+        <mapping class="co.admis.model.User"/>
+        <mapping class="co.admis.model.UserOTP"/>
+        <mapping class="co.admis.model.UserPermission"/>
+        <mapping class="co.admis.model.UserRole"/>
+        <mapping class="co.admis.model.Vendor"/>
+    </session-factory>
+</hibernate-configuration>

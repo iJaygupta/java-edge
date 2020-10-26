@@ -1,0 +1,132 @@
+// main: style.scss
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+/* Nav Menu Essentials */
+.nav-menu {
+  & ,* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+
+  li {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  & > li {
+    float: left;
+  }
+
+  li:hover > ul,
+  li.sfHover > ul {
+    display: block;
+  }
+
+  ul ul {
+    top: 0;
+    left: 100%;
+  }
+
+  ul li {
+    min-width: 180px;
+  }
+}
+
+/* Nav Menu Arrows */
+.sf-arrows {
+  .sf-with-ul {
+    padding-right: 30px;
+  }
+
+  .sf-with-ul:after {
+    content: "\f107";
+    position: absolute;
+    right: 15px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  ul .sf-with-ul:after {
+    content: "\f105";
+  }
+}
+
+/* Nav Meu Container */
+#nav-menu-container {
+  float: right;
+  margin: 0;
+  @media (min-width: 1024px) {
+    padding-right: 60px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/* Nav Meu Styling */
+.nav-menu {
+  a {
+    padding: 0 8px 10px 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-family: $accent-font;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    outline: none;
+  }
+
+  li:hover > a, > .menu-active > a {
+    color: $accent-color;
+  }
+
+  >  li {
+    margin-left: 10px;
+  }
+
+
+  ul {
+    margin: 4px 0 0 0;
+    padding: 10px;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    background: #fff;
+
+    li {
+      transition: 0.3s;
+      a {
+        padding: 10px;
+        color: #333;
+        transition: 0.3s;
+        display: block;
+        font-size: 13px;
+        text-transform: none;
+
+      }
+
+      &:hover {
+        > a {
+          color: $accent-color;
+        }
+      }
+
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}

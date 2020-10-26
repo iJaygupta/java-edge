@@ -1,0 +1,42 @@
+{
+  "name": "print-js",
+  "homepage": "http://printjs.crabbly.com",
+  "description": "A tiny javascript library to help printing from the web.",
+  "version": "1.0.52",
+  "main": "dist/print.js",
+  "types": "./index.d.ts",
+  "repository": "https://github.com/crabbly/Print.js",
+  "license": "MIT",
+  "dependences": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "sass-loader": "^7.1.0",
+    "standard": "^7.1.2",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "test": "standard",
+    "dev": "webpack --mode development --progress --hide-modules --devtool source-map",
+    "watch": "webpack --mode development --watch --progress --hide-modules",
+    "production": "webpack --mode production --progress --hide-modules"
+  },
+  "author": "Rodrigo Vieira <rodrigo@crabbly.com>",
+  "standard": {
+    "ignore": [
+      "/dist/print.js"
+    ]
+  },
+  "keywords": [
+    "printjs",
+    "print.js",
+    "print-js"
+  ]
+}

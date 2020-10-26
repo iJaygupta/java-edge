@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="co.admis" />
+	<context:annotation-config />
+        
+         
+	<bean id="userService" class="co.admis.service.UserServiceImpl" />
+	<bean id="userDao" class="co.admis.dao.UserDaoImpl" />
+        
+        <bean id="adminService" class="co.admis.service.AdminServiceImpl" />
+	<bean id="adminDao" class="co.admis.dao.AdminDaoImpl" />
+        
+        <bean id="commonMethodsService" class="co.admis.service.CommonMethodsServiceImpl" />
+	<bean id="commonMethodsDao" class="co.admis.dao.CommonMethodsDaoImpl" />
+        
+        <bean id="amazonS3Service" class="co.admis.service.AmazonS3ServiceImpl" />
+	<bean id="amazonS3Dao" class="co.admis.dao.AmazonS3DaoImpl" />
+        
+        <bean id="authenticationService" class="co.admis.service.AuthenticationServiceImpl" />
+	<bean id="authenticationDao" class="co.admis.dao.AuthenticationDaoImpl" />
+        
+        <bean id="billFormatService" class="co.admis.service.BillFormatServiceImpl" />
+	<bean id="billFormatDao" class="co.admis.dao.BillFormatDaoImpl" />
+        
+        <bean id="smsService" class="co.admis.service.SmsServiceImpl" />
+	<bean id="smsDao" class="co.admis.dao.SmsDaoImpl" />
+        
+        <bean id="securityService" class="co.admis.service.SecurityServiceImpl" />
+	<bean id="securityDao" class="co.admis.dao.SecurityDaoImpl" />
+        
+        <bean id="organizationService" class="co.admis.service.OrganizationServiceImpl" />
+	<bean id="organizationDao" class="co.admis.dao.OrganizationDaoImpl" />
+        
+        <bean id="ccAvenueService" class="co.admis.service.CcAvenueServiceImpl" />
+	<bean id="ccAvenueDao" class="co.admis.dao.CcAvenueDaoImpl" />
+        
+        <bean id="firebaseUserService" class="co.admis.service.FirebaseUserServiceImpl" />
+	<bean id="firebaseUserDao" class="co.admis.dao.FirebaseUserDaoImpl" />
+        
+        <bean id="firebaseMessagingService" class="co.admis.service.FirebaseMessagingServiceImpl" />
+	<bean id="firebaseMessagingDao" class="co.admis.dao.FirebaseMessagingDaoImpl" />
+        
+        <bean id="facilityService" class="co.admis.service.FacilityServiceImpl" />
+	<bean id="facilityDao" class="co.admis.dao.FacilityDaoImpl" />
+        
+        <bean id="customerService" class="co.admis.service.CustomerServiceImpl" />
+	<bean id="customerDao" class="co.admis.dao.CustomerDaoImpl" />
+        
+        <bean id="deviceService" class="co.admis.service.DeviceServiceImpl" />
+	<bean id="deviceDao" class="co.admis.dao.DeviceDaoImpl" />
+        
+        <bean id="productService" class="co.admis.service.ProductServiceImpl" />
+	<bean id="productDao" class="co.admis.dao.ProductDaoImpl" />
+        
+        <bean id="masterService" class="co.admis.service.MasterServiceImpl" />
+	<bean id="masterDao" class="co.admis.dao.MasterDaoImpl" />
+        
+        <bean id="mailjetService" class="co.admis.service.mail.MailjetServiceImpl" />
+	<bean id="mailjetDao" class="co.admis.dao.mail.MailjetDaoImpl" />
+        
+        <bean id="invoiceService" class="co.admis.service.InvoiceServiceImpl" />
+	<bean id="invoiceDao" class="co.admis.dao.InvoiceDaoImpl" />
+        
+        <bean id="corsFilter" class="co.admis.security.CorsFilter" />
+        
+        <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- max upload size in bytes -->
+        <property name="maxUploadSize" value="20971520" /> <!-- 20MB -->
+         
+        <!-- max size of file in memory (in bytes) -->
+        <property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
+ 
+    </bean>
+     
+    <bean
+        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">Error</prop>
+            </props>
+        </property>
+    </bean>   
+         
+</beans>

@@ -1,0 +1,60 @@
+// main: style.scss
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  background: #fff;
+  color: $text-color;
+  font-family: $text-font;
+}
+
+a {
+  color: $accent-color;
+  transition: 0.5s;
+}
+
+a:hover, a:active, a:focus {
+  color: lighten($accent-color, 0.2%);
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: $accent_color;
+  color: #fff;
+  display: inline-block;;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right:15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+
+  i {
+    padding-top: 12px;
+    color: #fff;
+  }
+
+  @media (max-width: 768px){
+   bottom: 15px;
+  }
+}
